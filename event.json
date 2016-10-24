@@ -1,0 +1,10 @@
+{
+  "requestContext": {
+    "resourcePath": "/greeting",
+    "httpMethod": "GET"
+  },
+  "queryStringParameters": {
+    "name": "Superman"
+  }
+
+}

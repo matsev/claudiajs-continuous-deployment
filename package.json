@@ -1,0 +1,32 @@
+{
+  "name": "claudiajs-continuous-deployment",
+  "version": "0.1.0",
+  "description": "Claudia.js Continuous Deployment Demo Project",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "create-app": "claudia create --region eu-west-1 --api-module index",
+    "update-latest": "claudia update",
+    "update-stage": "claudia update --version stage",
+    "update-prod": "claudia update --version prod",
+    "test": "mocha --recursive",
+    "xunit-test": "XUNIT_FILE=xunit-test.xml mocha --recursive -R xunit-file",
+    "itest-lambda": "mocha --recursive itest-lambda",
+    "xunit-itest-lambda": "XUNIT_FILE=xunit-itest-lambda.xml mocha --recursive itest-lambda -R xunit-file",
+    "itest-api-gateway": "mocha --recursive itest-api-gateway",
+    "xunit-itest-api-gateway": "XUNIT_FILE=xunit-itest-api-gateway.xml mocha --recursive itest-api-gateway -R xunit-file"
+  },
+  "dependencies": {
+    "claudia-api-builder": "2.0.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "2.6.9",
+    "chai": "3.5.0",
+    "claudia": "2.1.0",
+    "mocha": "3.1.2",
+    "request": "2.75.0",
+    "request-promise": "4.1.1",
+    "sinon": "1.17.6",
+    "xunit-file": "1.0.0"
+  }
+}
